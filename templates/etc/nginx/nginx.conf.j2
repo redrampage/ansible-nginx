@@ -33,8 +33,11 @@ http {
 	access_log /var/log/nginx/access.log;
 	error_log /var/log/nginx/error.log;
 
-	gzip on;
-	gzip_disable "msie6";
+    gzip on;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_disable "msie6";
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;
+    gzip_comp_level 5;
 
 	# Virtual Hosts Configs
 	include /etc/nginx/conf.d/*.conf;
