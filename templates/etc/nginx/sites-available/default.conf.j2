@@ -537,13 +537,6 @@ server {
 	}
 
 {% endif %}
-	# Disallow access to hidden files and directories
-	location ~ /\. {
-		return 404;
-		access_log off;
-		log_not_found off;
-	}
-
 {% if (item.favicon is defined and item.favicon) or item.favicon is undefined %}
 	location = /favicon.ico {
 		try_files /favicon.ico =204;
