@@ -9,7 +9,7 @@
     name: '{{ item }}'
     state: 'latest'
     install_recommends: False
-  with_items: nginx_base_packages
+  with_items: "{{ nginx_base_packages }}"
 
 - name: Restart nginx on first install to bypass missing pid bug
   service:
